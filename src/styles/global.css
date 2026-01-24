@@ -3,27 +3,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @theme {
-  /* Colors */
-  --color-background: hsl(210 40% 98%);
-  --color-foreground: hsl(222 47% 11%);
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(222 47% 11%);
-  --color-primary: hsl(221 83% 60%);
-  --color-primary-foreground: hsl(210 40% 98%);
-  --color-secondary: hsl(210 40% 96%);
-  --color-secondary-foreground: hsl(222 47% 11%);
-  --color-muted: hsl(210 40% 96%);
-  --color-muted-foreground: hsl(215 16% 47%);
-  --color-accent: hsl(187 92% 45%);
-  --color-accent-foreground: hsl(222 47% 11%);
-  --color-border: hsl(214 32% 91%);
+  /* Dark Theme Colors - Profound Inspired */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-card: #0a0a0a;
+  --color-card-foreground: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-foreground: #000000;
+  --color-secondary: #18181b;
+  --color-secondary-foreground: #ffffff;
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
+  --color-accent: #22c55e;
+  --color-accent-foreground: #000000;
+  --color-border: #27272a;
   --color-destructive: hsl(0 84% 60%);
   
   /* Semantic colors */
-  --color-text-heading: hsl(222 47% 11%);
-  --color-text-body: hsl(215 16% 35%);
-  --color-text-muted: hsl(215 16% 55%);
-  --color-glow: hsl(221 83% 53%);
+  --color-text-heading: #ffffff;
+  --color-text-body: #d4d4d8;
+  --color-text-muted: #71717a;
+  --color-glow: #22c55e;
+  --color-glow-blue: #3b82f6;
 
   /* Custom animations */
   --animate-float: float 3s ease-in-out infinite;
@@ -75,6 +76,14 @@
   50% { transform: translateY(-5px); }
 }
 
+@keyframes rotate-logos {
+  0%, 20% { opacity: 1; transform: translateY(0); }
+  25%, 45% { opacity: 0; transform: translateY(-20px); }
+  50%, 70% { opacity: 1; transform: translateY(0); }
+  75%, 95% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -94,29 +103,82 @@
 }
 
 @layer components {
+  /* Blueprint Grid Background */
+  .blueprint-grid {
+    background-image: 
+      linear-gradient(to right, rgba(39, 39, 42, 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
+    background-size: 100px 100px;
+  }
+
+  .blueprint-lines {
+    position: relative;
+  }
+
+  .blueprint-lines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 199px,
+      rgba(39, 39, 42, 0.5) 199px,
+      rgba(39, 39, 42, 0.5) 200px
+    );
+    pointer-events: none;
+  }
+
   .gradient-text {
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to right, var(--color-accent), #4ade80);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .gradient-bg {
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    background: linear-gradient(to right, var(--color-accent), #4ade80);
   }
 
+  /* Dark Glass Card */
   .glass-card {
-    background-color: color-mix(in srgb, var(--color-card) 80%, transparent);
-    backdrop-filter: blur(12px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 0 30px -10px color-mix(in srgb, var(--color-primary) 30%, transparent);
+    border-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 30px -10px rgba(34, 197, 94, 0.2);
     transform: translateY(-2px);
   }
+
+  /* macOS Window Style */
+  .macos-window {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .macos-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: rgba(39, 39, 42, 0.5);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .macos-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .macos-dot-red { background-color: #ff5f57; }
+  .macos-dot-yellow { background-color: #febc2e; }
+  .macos-dot-green { background-color: #28c840; }
 
   .section-padding {
     padding: 5rem 1rem;
@@ -135,7 +197,7 @@
   }
 
   .heading-xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1.1;
@@ -144,13 +206,13 @@
 
   @media (min-width: 768px) {
     .heading-xl {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .heading-xl {
-      font-size: 3.75rem;
+      font-size: 4.5rem;
     }
   }
 
@@ -163,7 +225,7 @@
 
   @media (min-width: 768px) {
     .heading-lg {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -198,9 +260,14 @@
   }
 
   .glow-effect {
-    box-shadow: 0 0 60px -15px color-mix(in srgb, var(--color-glow) 30%, transparent);
+    box-shadow: 0 0 60px -15px rgba(34, 197, 94, 0.3);
   }
 
+  .glow-effect-blue {
+    box-shadow: 0 0 60px -15px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Hero Buttons - High Contrast */
   .btn-hero {
     display: inline-flex;
     align-items: center;
@@ -208,17 +275,15 @@
     padding: 0.875rem 2rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.75rem;
-    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    border-radius: 0.5rem;
+    background: var(--color-primary);
     color: var(--color-primary-foreground);
     transition: all 0.3s;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   }
 
   .btn-hero:hover {
     opacity: 0.9;
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   }
 
   .btn-hero-outline {
@@ -228,17 +293,76 @@
     padding: 0.875rem 2rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     background: transparent;
-    border: 2px solid var(--color-border);
+    border: 1px solid var(--color-border);
     color: var(--color-foreground);
     transition: all 0.3s;
   }
 
   .btn-hero-outline:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: var(--color-muted-foreground);
+    background: rgba(255, 255, 255, 0.05);
     transform: translateY(-2px);
+  }
+
+  /* Accent Button */
+  .btn-accent {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background: var(--color-accent);
+    color: var(--color-accent-foreground);
+    transition: all 0.3s;
+  }
+
+  .btn-accent:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  /* Status indicator */
+  .status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--color-accent);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Announcement Bar */
+  .announcement-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #60a5fa;
+    transition: all 0.3s;
+  }
+
+  .announcement-bar:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
   }
 
   /* Animate on scroll */
@@ -252,4 +376,5 @@
   .animate-on-scroll.delay-200 { animation-delay: 0.2s; }
   .animate-on-scroll.delay-300 { animation-delay: 0.3s; }
   .animate-on-scroll.delay-400 { animation-delay: 0.4s; }
+  .animate-on-scroll.delay-500 { animation-delay: 0.5s; }
 }
