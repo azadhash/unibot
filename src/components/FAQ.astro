@@ -1,0 +1,63 @@
+---
+const faqs = [
+  {
+    question: "How does UniBot keep my data private?",
+    answer: "Your data is encrypted using AES-256 encryption both at rest and in transit. We never use your data to train our base models, and your information is completely isolated from other customers. You retain full ownership and control of your data at all times.",
+  },
+  {
+    question: "How long does it take to set up UniBot?",
+    answer: "Most customers are up and running within 30 minutes. Simply upload your documents or connect your data sources, wait for the AI to process them (usually a few minutes), and embed the chat widget on your website. No coding required.",
+  },
+  {
+    question: "What data sources does UniBot support?",
+    answer: "UniBot supports a wide range of sources including PDF files, Word documents, CSV/Excel files, Notion pages, Confluence, Google Docs, REST APIs, and direct database connections. We're constantly adding new integrations based on customer feedback.",
+  },
+  {
+    question: "How much does UniBot cost?",
+    answer: "We offer flexible pricing based on your usage and needs. Our Starter plan is perfect for small teams, Pro for growing businesses, and Enterprise for large organizations with custom requirements. Book a demo to discuss the best plan for your needs.",
+  },
+  {
+    question: "Can I customize the chatbot's appearance and behavior?",
+    answer: "Absolutely! You can customize the chat widget's colors, logo, welcome message, and position to match your brand. You can also configure the AI's tone, set up custom responses for specific questions, and define escalation rules for when to involve human agents.",
+  },
+];
+---
+
+<section id="faq" class="section-padding bg-[var(--color-secondary)] bg-opacity-30">
+  <div class="container-narrow mx-auto">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="heading-lg mb-4">
+        Frequently Asked <span class="gradient-text">Questions</span>
+      </h2>
+      <p class="body-lg max-w-2xl mx-auto">
+        Everything you need to know about UniBot. Can't find what you're looking for?{" "}
+        <a href="#book-demo" class="text-[var(--color-primary)] hover:underline">
+          Book a demo
+        </a>{" "}
+        and ask us directly.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4 animate-on-scroll delay-200">
+      {faqs.map((faq, index) => (
+        <details class="glass-card rounded-xl group" name="faq">
+          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-[var(--color-foreground)] hover:text-[var(--color-primary)] transition-colors list-none">
+            <span class="pr-4">{faq.question}</span>
+            <svg class="w-5 h-5 flex-shrink-0 text-[var(--color-muted-foreground)] group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-[var(--color-muted-foreground)]">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

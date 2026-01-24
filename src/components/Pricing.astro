@@ -1,0 +1,327 @@
+---
+import { supabase } from '../lib/supabase';
+
+const plans = [
+  {
+    name: "Starter",
+    price: "$15",
+    period: "/month",
+    description: "Perfect for trying out AI-powered support",
+    features: [
+      "Up to 500 conversations/month",
+      "1 chatbot",
+      "Upload up to 20 documents",
+      "Email support",
+      "Basic analytics",
+    ],
+    cta: "Start Trial",
+    popular: false,
+  },
+  {
+    name: "Growth",
+    price: "$49",
+    period: "/month",
+    description: "Great for small businesses getting started",
+    features: [
+      "Up to 2,000 conversations/month",
+      "2 chatbots",
+      "Upload up to 100 documents",
+      "Email support",
+      "Standard analytics",
+      "Custom widget styling",
+    ],
+    cta: "Start Trial",
+    popular: false,
+  },
+  {
+    name: "Pro",
+    price: "$149",
+    period: "/month",
+    description: "For growing teams that need more power",
+    features: [
+      "Up to 10,000 conversations/month",
+      "5 chatbots",
+      "Upload up to 500 documents",
+      "API & database integrations",
+      "Priority support",
+      "Advanced analytics",
+      "Custom branding",
+      "Real-time data sync",
+    ],
+    cta: "Start Trial",
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
+    description: "For large organizations with advanced needs",
+    features: [
+      "Unlimited conversations",
+      "Unlimited chatbots",
+      "Unlimited documents",
+      "SSO & SAML authentication",
+      "Dedicated account manager",
+      "Custom SLA",
+      "On-premise deployment",
+    ],
+    cta: "Contact Sales",
+    popular: false,
+  },
+];
+
+// Supabase URL for client-side use
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || '';
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_KEY_ANON_KEY || '';
+---
+
+<section id="pricing" class="py-20 md:py-32 bg-[var(--color-muted)] bg-opacity-30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-foreground)] mb-4">
+        Simple, Transparent Pricing
+      </h2>
+      <p class="text-lg md:text-xl text-[var(--color-muted-foreground)] max-w-2xl mx-auto">
+        Choose the plan that fits your needs. All plans include a 14-day free trial.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      {plans.map((plan, index) => (
+        <div class={`relative animate-on-scroll delay-${(index + 1) * 100}`}>
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+              <span class="gradient-bg text-white text-sm font-semibold px-4 py-1 rounded-full">
+                Most Popular
+              </span>
+            </div>
+          )}
+          <div class={`h-full flex flex-col bg-[var(--color-card)] rounded-2xl border ${
+            plan.popular
+              ? "border-blue-500 border-opacity-50 shadow-xl shadow-blue-500/10 scale-105"
+              : "border-[var(--color-border)] border-opacity-50"
+          }`}>
+            <div class="text-center p-6 pb-4">
+              <h3 class="text-xl font-bold text-[var(--color-foreground)]">{plan.name}</h3>
+              <p class="text-sm text-[var(--color-muted-foreground)] mt-2">{plan.description}</p>
+              <div class="mt-4">
+                <span class="text-4xl font-bold text-[var(--color-foreground)]">
+                  {plan.price}
+                </span>
+                <span class="text-[var(--color-muted-foreground)]">{plan.period}</span>
+              </div>
+            </div>
+            <div class="flex-grow p-6 pt-0">
+              <ul class="space-y-3">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-sm text-[var(--color-muted-foreground)]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                data-plan={plan.name}
+                data-price={plan.price}
+                class={`trial-btn w-full block text-center py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
+                  plan.popular
+                    ? "btn-hero"
+                    : "btn-hero-outline"
+                }`}
+              >
+                {plan.cta}
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-[var(--color-muted-foreground)] mt-12 animate-on-scroll delay-400">
+      All plans include SSL encryption, 99.9% uptime SLA, and GDPR compliance.
+    </p>
+  </div>
+</section>
+
+<!-- Lead Capture Modal -->
+<div id="trial-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-on-scroll">
+    <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    
+    <div class="text-center mb-6">
+      <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900">Start Your Free Trial</h3>
+      <p id="modal-plan" class="text-gray-600 mt-1">Starter Plan - $15/month</p>
+    </div>
+
+    <form id="trial-form" class="space-y-4">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="you@company.com"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+        />
+      </div>
+      <div>
+        <label for="site_url" class="block text-sm font-medium text-gray-700 mb-1">Website URL</label>
+        <input
+          type="url"
+          id="site_url"
+          name="site_url"
+          required
+          placeholder="https://yourcompany.com"
+          class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+        />
+      </div>
+      <input type="hidden" id="selected-plan" name="plan" value="" />
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full btn-hero py-3 mt-2"
+      >
+        Start 14-Day Free Trial
+      </button>
+      <p class="text-xs text-center text-gray-500">
+        No credit card required. Cancel anytime.
+      </p>
+    </form>
+
+    <!-- Success Message -->
+    <div id="success-message" class="hidden text-center">
+      <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 mb-2">You're In!</h3>
+      <p class="text-gray-600">Check your email for next steps to set up your UniBot.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pass Supabase config to client -->
+<script define:vars={{ supabaseUrl, supabaseKey }}>
+  window.__SUPABASE_URL__ = supabaseUrl;
+  window.__SUPABASE_KEY__ = supabaseKey;
+</script>
+
+<script>
+  import { createClient } from '@supabase/supabase-js';
+
+  // Get Supabase config from window
+  const supabaseUrl = (window as any).__SUPABASE_URL__;
+  const supabaseKey = (window as any).__SUPABASE_KEY__;
+  
+  // Initialize Supabase client
+  const supabase = supabaseUrl && supabaseKey 
+    ? createClient(supabaseUrl, supabaseKey)
+    : null;
+
+  // Modal elements
+  const modal = document.getElementById('trial-modal');
+  const closeBtn = document.getElementById('close-modal');
+  const form = document.getElementById('trial-form') as HTMLFormElement;
+  const modalPlan = document.getElementById('modal-plan');
+  const selectedPlanInput = document.getElementById('selected-plan') as HTMLInputElement;
+  const submitBtn = document.getElementById('submit-btn');
+  const successMessage = document.getElementById('success-message');
+
+  // Open modal on trial button click
+  document.querySelectorAll('.trial-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const plan = btn.getAttribute('data-plan');
+      const price = btn.getAttribute('data-price');
+      
+      if (plan === 'Enterprise') {
+        document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      
+      if (modalPlan) modalPlan.textContent = `${plan} Plan - ${price}/month`;
+      if (selectedPlanInput) selectedPlanInput.value = plan || '';
+      
+      // Reset form and show it
+      form?.reset();
+      form?.classList.remove('hidden');
+      successMessage?.classList.add('hidden');
+      
+      modal?.classList.remove('hidden');
+      modal?.classList.add('flex');
+    });
+  });
+
+  // Close modal
+  const closeModal = () => {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  };
+
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Form submission with Supabase
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (submitBtn) {
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.setAttribute('disabled', 'true');
+    }
+
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get('email') as string,
+      site_url: formData.get('site_url') as string,
+      plan: formData.get('plan') as string,
+      created_at: new Date().toISOString(),
+    };
+
+    try {
+      if (supabase) {
+        const { error } = await supabase.from('leads').insert([data]);
+        
+        if (error) {
+          console.error('Supabase error:', error);
+          alert('Something went wrong. Please try again.');
+          return;
+        }
+      } else {
+        console.log('Supabase not configured. Lead data:', data);
+      }
+
+      // Show success message
+      form.classList.add('hidden');
+      successMessage?.classList.remove('hidden');
+      
+      // Auto-close after 3 seconds
+      setTimeout(closeModal, 3000);
+      
+    } catch (err) {
+      console.error('Error:', err);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.textContent = 'Start 14-Day Free Trial';
+        submitBtn.removeAttribute('disabled');
+      }
+    }
+  });
+</script>

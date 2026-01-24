@@ -1,0 +1,132 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-background)]">
+  <!-- Background gradient effects -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-[var(--color-primary)] opacity-10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[var(--color-accent)] opacity-10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] opacity-5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container-narrow mx-auto px-4 md:px-8 pt-32 pb-20 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left content -->
+      <div class="text-center lg:text-left animate-on-scroll">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+          <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+          <span class="text-sm font-medium text-blue-600">Your 24/7 AI Support Companion</span>
+        </div>
+
+        <h1 class="heading-xl mb-6">
+          Build AI Chatbots for <span class="gradient-text">Support & Teams</span>
+        </h1>
+
+        <p class="body-lg mb-8 max-w-xl mx-auto lg:mx-0">
+          Create custom AI chatbots for customer support and internal teams. Train on your data and embed anywhere in minutes.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#book-demo" class="btn-hero">
+            Book a Demo
+            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn-hero-outline">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            See How It Works
+          </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="mt-10 pt-10 border-t border-[var(--color-border)] border-opacity-50 animate-on-scroll delay-300">
+          <p class="text-sm text-[var(--color-muted-foreground)] mb-4">Trusted by innovative companies</p>
+          <div class="flex items-center gap-8 justify-center lg:justify-start opacity-50">
+            <div class="text-lg font-semibold text-[var(--color-muted-foreground)]">Acme Inc</div>
+            <div class="text-lg font-semibold text-[var(--color-muted-foreground)]">TechCorp</div>
+            <div class="text-lg font-semibold text-[var(--color-muted-foreground)]">StartupXY</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right content - Chat preview -->
+      <div class="relative animate-on-scroll delay-200">
+        <div class="relative">
+          <!-- Glow effect -->
+          <div class="absolute inset-0 gradient-bg rounded-3xl blur-2xl opacity-20 scale-105"></div>
+          
+          <!-- Chat window -->
+          <div class="relative glass-card rounded-2xl p-6 glow-effect">
+            <!-- Chat header -->
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[var(--color-border)] border-opacity-50">
+              <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-[var(--color-foreground)]">UniBot Assistant</p>
+                <p class="text-xs text-[var(--color-muted-foreground)] flex items-center gap-1">
+                  <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Online • Trained on your data
+                </p>
+              </div>
+            </div>
+
+            <!-- Chat messages -->
+            <div class="space-y-4">
+              <div class="flex justify-end animate-on-scroll delay-300">
+                <div class="bg-[var(--color-primary)] bg-opacity-10 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]">
+                  <p class="text-sm text-[var(--color-foreground)]">How do I integrate your API with my platform?</p>
+                </div>
+              </div>
+
+              <div class="flex justify-start animate-on-scroll delay-400">
+                <div class="bg-[var(--color-secondary)] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
+                  <p class="text-sm text-[var(--color-foreground)] mb-2">
+                    Great question! Here's how to integrate our API:
+                  </p>
+                  <ol class="text-sm text-[var(--color-muted-foreground)] space-y-1">
+                    <li>1. Generate an API key from your dashboard</li>
+                    <li>2. Install our SDK: npm install unibot-sdk</li>
+                    <li>3. Initialize with your key...</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="flex justify-end animate-on-scroll delay-500">
+                <div class="bg-[var(--color-primary)] bg-opacity-10 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]">
+                  <p class="text-sm text-[var(--color-foreground)]">That's exactly what I needed! 🎉</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="mt-6 pt-4 border-t border-[var(--color-border)] border-opacity-50">
+              <div class="flex items-center gap-3 bg-[var(--color-secondary)] bg-opacity-50 rounded-xl px-4 py-3">
+                <svg class="w-5 h-5 text-[var(--color-muted-foreground)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span class="text-sm text-[var(--color-muted-foreground)]">Type your message...</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating element -->
+          <div class="absolute -top-4 -right-4 w-12 h-12 rounded-xl gradient-bg flex items-center justify-center shadow-lg" style="animation: float 3s ease-in-out infinite;">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
