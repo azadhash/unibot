@@ -41,3 +41,4 @@ wrangler pages deploy dist --project-name=unibot
 
 - Website: [unibot.in](https://unibot.in)
 - Email: hello@unibot.in
+- Owner: Azad Singh
