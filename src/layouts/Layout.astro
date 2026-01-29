@@ -1,14 +1,14 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { 
-  title = 'UniBot - Build AI Chatbots for Support & Teams',
-  description = 'Create custom AI chatbots for customer support and internal teams. Train on your data and embed anywhere. No coding required.'
+const {
+  title = "UniBot - Build AI Chatbots for Support & Teams",
+  description = "Create custom AI chatbots for customer support and internal teams. Train on your data and embed anywhere. No coding required.",
 } = Astro.props;
 ---
 
@@ -22,8 +22,14 @@ const {
     <meta name="author" content="UniBot" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="UniBot - Universal AI Assistant for Your Business" />
-    <meta property="og:description" content="Turn your company data into an intelligent AI chatbot. Provide instant, accurate customer support 24/7." />
+    <meta
+      property="og:title"
+      content="UniBot - Universal AI Assistant for Your Business"
+    />
+    <meta
+      property="og:description"
+      content="Turn your company data into an intelligent AI chatbot. Provide instant, accurate customer support 24/7."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unibot.in" />
 
@@ -31,13 +37,41 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@UniBot" />
 
-    <!-- Fonts -->
+    <!-- Fonts - Syne (Display) + Satoshi (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Custom cursor styling -->
+    <style>
+      /* Smooth scrolling on the entire page */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Preload animation prevention */
+      .preload * {
+        transition: none !important;
+      }
+    </style>
   </head>
-  <body>
+  <body class="grain-overlay">
     <slot />
+
+    <script>
+      // Remove preload class after page loads to enable transitions
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.remove("preload");
+      });
+    </script>
   </body>
 </html>

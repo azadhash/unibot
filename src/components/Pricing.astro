@@ -1,5 +1,5 @@
 ---
-import { supabase } from '../lib/supabase';
+import { supabase } from "../lib/supabase";
 
 const plans = [
   {
@@ -71,153 +71,265 @@ const plans = [
 ];
 
 // Supabase URL for client-side use
-const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || '';
-const supabaseKey = import.meta.env.PUBLIC_SUPABASE_KEY_ANON_KEY || '';
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || "";
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_KEY_ANON_KEY || "";
 ---
 
-<section id="pricing" class="py-20 md:py-32 bg-zinc-950 relative">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section id="pricing" class="section-cosmic bg-[#050507] relative">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-coral w-[600px] h-[600px] top-1/4 -left-60 opacity-15"
+    >
+    </div>
+    <div
+      class="cosmic-orb cosmic-orb-violet w-[400px] h-[400px] bottom-0 right-20 opacity-10"
+      style="animation-delay: -5s;"
+    >
+    </div>
   </div>
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="heading-lg mb-4">
-        Simple, <span class="gradient-text">Transparent Pricing</span>
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-fade-up">
+      <span class="announcement-premium mb-6 inline-flex">
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        Flexible Pricing
+      </span>
+      <h2 class="heading-section mb-6">
+        Simple, <span class="gradient-text-luminous">Transparent Pricing</span>
       </h2>
-      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto">
-        Choose the plan that fits your needs. All plans include a 14-day free trial.
+      <p class="body-large max-w-2xl mx-auto text-[#8b8b9a]">
+        Choose the plan that fits your needs. All plans include a 14-day free
+        trial.
       </p>
     </div>
 
+    <!-- Pricing Cards -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-      {plans.map((plan, index) => (
-        <div class={`relative animate-on-scroll delay-${(index + 1) * 100}`}>
-          {plan.popular && (
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-              <span class="bg-green-500 text-black text-sm font-semibold px-4 py-1 rounded-full">
-                Most Popular
-              </span>
-            </div>
-          )}
-          <div class={`h-full flex flex-col bg-zinc-900 rounded-xl border ${
-            plan.popular
-              ? "border-green-500/50 shadow-xl shadow-green-500/10"
-              : "border-zinc-800"
-          }`}>
-            <div class="text-center p-6 pb-4">
-              <h3 class="text-xl font-bold text-white">{plan.name}</h3>
-              <p class="text-sm text-zinc-500 mt-2">{plan.description}</p>
-              <div class="mt-4">
-                <span class="text-4xl font-bold text-white">
-                  {plan.price}
-                </span>
-                <span class="text-zinc-500">{plan.period}</span>
+      {
+        plans.map((plan, index) => (
+          <div class={`relative animate-fade-up delay-${(index + 1) * 100}`}>
+            {plan.popular && (
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                <span class="popular-badge">Most Popular</span>
+              </div>
+            )}
+            <div
+              class={`h-full flex flex-col rounded-2xl border transition-all duration-500 ${
+                plan.popular
+                  ? "bg-gradient-to-b from-[#ff6b4a]/10 to-[#0c0c0f] border-[#ff6b4a]/30 shadow-2xl shadow-[#ff6b4a]/10"
+                  : "bg-[#0c0c0f] border-[#1f1f28] hover:border-[#2a2a35]"
+              }`}
+            >
+              <div class="text-center p-7 pb-5">
+                <h3
+                  class="text-xl font-bold text-white mb-2"
+                  style="font-family: 'Syne', sans-serif;"
+                >
+                  {plan.name}
+                </h3>
+                <p class="text-sm text-[#6b6b7a] mb-4">{plan.description}</p>
+                <div class="flex items-baseline justify-center gap-1">
+                  <span
+                    class={`text-4xl font-bold ${plan.popular ? "gradient-text-luminous" : "text-white"}`}
+                    style="font-family: 'Syne', sans-serif;"
+                  >
+                    {plan.price}
+                  </span>
+                  <span class="text-[#6b6b7a]">{plan.period}</span>
+                </div>
+              </div>
+
+              <div class="flex-grow px-7 pb-4">
+                <ul class="space-y-3.5">
+                  {plan.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <div class="check-icon mt-0.5">
+                        <svg
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="3"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span class="text-sm text-[#8b8b9a]">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="p-7 pt-4">
+                <button
+                  data-plan={plan.name}
+                  data-price={plan.price}
+                  class={`trial-btn w-full py-3.5 px-6 rounded-xl font-semibold transition-all duration-300 ${
+                    plan.popular
+                      ? "btn-luminous"
+                      : "bg-[#111115] text-white border border-[#1f1f28] hover:border-[#ff6b4a]/30 hover:bg-[#ff6b4a]/5"
+                  }`}
+                  style="font-family: 'Syne', sans-serif;"
+                >
+                  <span>{plan.cta}</span>
+                </button>
               </div>
             </div>
-            <div class="flex-grow p-6 pt-0">
-              <ul class="space-y-3">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span class="text-sm text-zinc-400">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div class="p-6 pt-0">
-              <button
-                data-plan={plan.name}
-                data-price={plan.price}
-                class={`trial-btn w-full block text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-                  plan.popular
-                    ? "bg-green-500 text-black hover:bg-green-400"
-                    : "bg-zinc-800 text-white border border-zinc-700 hover:border-zinc-600 hover:bg-zinc-700"
-                }`}
-              >
-                {plan.cta}
-              </button>
-            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
-    <p class="text-center text-zinc-500 mt-12 animate-on-scroll delay-400">
+    <p class="text-center text-[#6b6b7a] mt-12 animate-fade-up delay-500">
       All plans include SSL encryption, 99.9% uptime SLA, and GDPR compliance.
     </p>
   </div>
 </section>
 
-<!-- Lead Capture Modal (Dark Theme) -->
-<div id="trial-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-  <div class="bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-on-scroll">
-    <button id="close-modal" class="absolute top-4 right-4 text-zinc-500 hover:text-zinc-300">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+<!-- Lead Capture Modal -->
+<div
+  id="trial-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#050507]/90 backdrop-blur-lg"
+>
+  <div
+    class="bg-[#0c0c0f] border border-[#1f1f28] rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in"
+  >
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-[#6b6b7a] hover:text-white transition-colors"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    
-    <div class="text-center mb-6">
-      <div class="w-12 h-12 rounded-xl bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto mb-4">
-        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+
+    <div class="text-center mb-8">
+      <div
+        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ff6b4a]/20 to-[#ffa94d]/20 border border-[#ff6b4a]/30 flex items-center justify-center mx-auto mb-5"
+      >
+        <svg
+          class="w-7 h-7 text-[#ff6b4a]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
       </div>
-      <h3 class="text-2xl font-bold text-white">Start Your Free Trial</h3>
-      <p id="modal-plan" class="text-zinc-400 mt-1">Starter Plan - $15/month</p>
+      <h3
+        class="text-2xl font-bold text-white"
+        style="font-family: 'Syne', sans-serif;"
+      >
+        Start Your Free Trial
+      </h3>
+      <p id="modal-plan" class="text-[#8b8b9a] mt-2">
+        Starter Plan - $15/month
+      </p>
     </div>
 
-    <form id="trial-form" class="space-y-4">
+    <form id="trial-form" class="space-y-5">
       <div>
-        <label for="email" class="block text-sm font-medium text-zinc-300 mb-1">Email Address</label>
+        <label for="email" class="block text-sm font-medium text-[#c4c4d0] mb-2"
+          >Email Address</label
+        >
         <input
           type="email"
           id="email"
           name="email"
           required
           placeholder="you@company.com"
-          class="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl bg-[#111115] border border-[#1f1f28] text-white placeholder:text-[#6b6b7a] focus:border-[#ff6b4a] focus:ring-2 focus:ring-[#ff6b4a]/20 outline-none transition-all"
         />
       </div>
       <div>
-        <label for="site_url" class="block text-sm font-medium text-zinc-300 mb-1">Website URL</label>
+        <label
+          for="site_url"
+          class="block text-sm font-medium text-[#c4c4d0] mb-2"
+          >Website URL</label
+        >
         <input
           type="url"
           id="site_url"
           name="site_url"
           required
           placeholder="https://yourcompany.com"
-          class="w-full px-4 py-3 rounded-xl bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none transition-all"
+          class="w-full px-4 py-3.5 rounded-xl bg-[#111115] border border-[#1f1f28] text-white placeholder:text-[#6b6b7a] focus:border-[#ff6b4a] focus:ring-2 focus:ring-[#ff6b4a]/20 outline-none transition-all"
         />
       </div>
       <input type="hidden" id="selected-plan" name="plan" value="" />
       <button
         type="submit"
         id="submit-btn"
-        class="w-full bg-green-500 text-black font-semibold py-3 rounded-xl hover:bg-green-400 transition-all mt-2"
+        class="w-full btn-luminous py-4 rounded-xl mt-2"
+        style="font-family: 'Syne', sans-serif;"
       >
-        Start 14-Day Free Trial
+        <span>Start 14-Day Free Trial</span>
       </button>
-      <p class="text-xs text-center text-zinc-500">
+      <p class="text-xs text-center text-[#6b6b7a]">
         No credit card required. Cancel anytime.
       </p>
     </form>
 
     <!-- Success Message -->
     <div id="success-message" class="hidden text-center">
-      <div class="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto mb-4">
-        <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      <div
+        class="w-18 h-18 rounded-full bg-gradient-to-br from-[#ff6b4a]/20 to-[#ffa94d]/20 border border-[#ff6b4a]/30 flex items-center justify-center mx-auto mb-5"
+      >
+        <svg
+          class="w-10 h-10 text-[#ff6b4a]"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
-      <h3 class="text-2xl font-bold text-white mb-2">You're In!</h3>
-      <p class="text-zinc-400">Check your email for next steps to set up your UniBot.</p>
+      <h3
+        class="text-2xl font-bold text-white mb-3"
+        style="font-family: 'Syne', sans-serif;"
+      >
+        You're In!
+      </h3>
+      <p class="text-[#8b8b9a]">
+        Check your email for next steps to set up your UniBot.
+      </p>
     </div>
   </div>
 </div>
@@ -229,105 +341,107 @@ const supabaseKey = import.meta.env.PUBLIC_SUPABASE_KEY_ANON_KEY || '';
 </script>
 
 <script>
-  import { createClient } from '@supabase/supabase-js';
+  import { createClient } from "@supabase/supabase-js";
 
   // Get Supabase config from window
   const supabaseUrl = (window as any).__SUPABASE_URL__;
   const supabaseKey = (window as any).__SUPABASE_KEY__;
-  
+
   // Initialize Supabase client
-  const supabase = supabaseUrl && supabaseKey 
-    ? createClient(supabaseUrl, supabaseKey)
-    : null;
+  const supabase =
+    supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
   // Modal elements
-  const modal = document.getElementById('trial-modal');
-  const closeBtn = document.getElementById('close-modal');
-  const form = document.getElementById('trial-form') as HTMLFormElement;
-  const modalPlan = document.getElementById('modal-plan');
-  const selectedPlanInput = document.getElementById('selected-plan') as HTMLInputElement;
-  const submitBtn = document.getElementById('submit-btn');
-  const successMessage = document.getElementById('success-message');
+  const modal = document.getElementById("trial-modal");
+  const closeBtn = document.getElementById("close-modal");
+  const form = document.getElementById("trial-form") as HTMLFormElement;
+  const modalPlan = document.getElementById("modal-plan");
+  const selectedPlanInput = document.getElementById(
+    "selected-plan",
+  ) as HTMLInputElement;
+  const submitBtn = document.getElementById("submit-btn");
+  const successMessage = document.getElementById("success-message");
 
   // Open modal on trial button click
-  document.querySelectorAll('.trial-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const plan = btn.getAttribute('data-plan');
-      const price = btn.getAttribute('data-price');
-      
-      if (plan === 'Enterprise') {
-        document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll(".trial-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const plan = btn.getAttribute("data-plan");
+      const price = btn.getAttribute("data-price");
+
+      if (plan === "Enterprise") {
+        document
+          .getElementById("book-demo")
+          ?.scrollIntoView({ behavior: "smooth" });
         return;
       }
-      
+
       if (modalPlan) modalPlan.textContent = `${plan} Plan - ${price}/month`;
-      if (selectedPlanInput) selectedPlanInput.value = plan || '';
-      
+      if (selectedPlanInput) selectedPlanInput.value = plan || "";
+
       // Reset form and show it
       form?.reset();
-      form?.classList.remove('hidden');
-      successMessage?.classList.add('hidden');
-      
-      modal?.classList.remove('hidden');
-      modal?.classList.add('flex');
+      form?.classList.remove("hidden");
+      successMessage?.classList.add("hidden");
+
+      modal?.classList.remove("hidden");
+      modal?.classList.add("flex");
     });
   });
 
   // Close modal
   const closeModal = () => {
-    modal?.classList.add('hidden');
-    modal?.classList.remove('flex');
+    modal?.classList.add("hidden");
+    modal?.classList.remove("flex");
   };
 
-  closeBtn?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (e) => {
+  closeBtn?.addEventListener("click", closeModal);
+  modal?.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
 
   // Form submission with Supabase
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
+
     if (submitBtn) {
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.textContent = "Submitting...";
+      submitBtn.setAttribute("disabled", "true");
     }
 
     const formData = new FormData(form);
     const data = {
-      email: formData.get('email') as string,
-      site_url: formData.get('site_url') as string,
-      plan: formData.get('plan') as string,
+      email: formData.get("email") as string,
+      site_url: formData.get("site_url") as string,
+      plan: formData.get("plan") as string,
       created_at: new Date().toISOString(),
     };
 
     try {
       if (supabase) {
-        const { error } = await supabase.from('leads').insert([data]);
-        
+        const { error } = await supabase.from("leads").insert([data]);
+
         if (error) {
-          console.error('Supabase error:', error);
-          alert('Something went wrong. Please try again.');
+          console.error("Supabase error:", error);
+          alert("Something went wrong. Please try again.");
           return;
         }
       } else {
-        console.log('Supabase not configured. Lead data:', data);
+        console.log("Supabase not configured. Lead data:", data);
       }
 
       // Show success message
-      form.classList.add('hidden');
-      successMessage?.classList.remove('hidden');
-      
+      form.classList.add("hidden");
+      successMessage?.classList.remove("hidden");
+
       // Auto-close after 3 seconds
       setTimeout(closeModal, 3000);
-      
     } catch (err) {
-      console.error('Error:', err);
-      alert('Something went wrong. Please try again.');
+      console.error("Error:", err);
+      alert("Something went wrong. Please try again.");
     } finally {
       if (submitBtn) {
-        submitBtn.textContent = 'Start 14-Day Free Trial';
-        submitBtn.removeAttribute('disabled');
+        submitBtn.textContent = "Start 14-Day Free Trial";
+        submitBtn.removeAttribute("disabled");
       }
     }
   });

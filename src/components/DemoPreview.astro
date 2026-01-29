@@ -7,122 +7,256 @@ const benefits = [
 ];
 ---
 
-<section class="section-padding bg-zinc-950 relative overflow-hidden">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section class="section-cosmic bg-[#050507] relative overflow-hidden">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-violet w-[600px] h-[600px] -top-60 -left-60 opacity-15"
+    >
+    </div>
+    <div
+      class="cosmic-orb cosmic-orb-coral w-[400px] h-[400px] bottom-0 right-0 opacity-20"
+      style="animation-delay: -8s;"
+    >
+    </div>
   </div>
 
-  <div class="container-narrow mx-auto relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
       <!-- Left content -->
-      <div class="animate-on-scroll">
-        <h2 class="heading-lg mb-6">
-          See Your <span class="gradient-text">AI in Action</span>
+      <div class="animate-slide-left">
+        <span class="status-pill mb-6 inline-flex">
+          <span class="status-pill-dot"></span>
+          Live Preview
+        </span>
+
+        <h2 class="heading-section mb-6">
+          See Your <span class="gradient-text-luminous">AI in Action</span>
         </h2>
-        <p class="body-lg mb-6 text-zinc-400">
-          Your UniBot learns from every piece of content you provide — from help docs to API documentation — and answers customer questions naturally.
+
+        <p class="body-large mb-8 text-[#8b8b9a]">
+          Your UniBot learns from every piece of content you provide — from help
+          docs to API documentation — and answers customer questions naturally.
         </p>
-        
-        <ul class="space-y-4 mb-8">
-          {benefits.map((item, index) => (
-            <li class={`flex items-start gap-3 animate-on-scroll delay-${(index + 1) * 100}`}>
-              <div class="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3 h-3 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span class="body-md text-zinc-300">{item}</span>
-            </li>
-          ))}
+
+        <ul class="space-y-5 mb-10">
+          {
+            benefits.map((item, index) => (
+              <li
+                class={`flex items-start gap-4 animate-fade-up delay-${(index + 1) * 100}`}
+              >
+                <div class="check-icon mt-0.5">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span class="body-regular text-[#c4c4d0]">{item}</span>
+              </li>
+            ))
+          }
         </ul>
 
-        <a href="#book-demo" class="btn-hero inline-flex">
-          Try It Yourself
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+        <a href="#book-demo" class="btn-luminous group inline-flex">
+          <span class="flex items-center gap-2">
+            Try It Yourself
+            <svg
+              class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </span>
         </a>
       </div>
 
-      <!-- Right content - macOS Window Chat Preview -->
-      <div class="relative animate-on-scroll delay-200">
+      <!-- Right content - Chat Preview -->
+      <div class="relative animate-slide-right delay-200">
         <!-- Background glow -->
-        <div class="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl blur-2xl opacity-50"></div>
-        
+        <div
+          class="absolute -inset-6 bg-gradient-to-br from-[#9f7aea]/20 via-[#ff6b4a]/15 to-[#ffa94d]/20 rounded-3xl blur-3xl opacity-60"
+        >
+        </div>
+
         <!-- macOS Window Chat Widget -->
-        <div class="relative macos-window glow-effect">
+        <div class="relative macos-window-premium glow-violet">
           <!-- Title bar -->
-          <div class="macos-titlebar">
+          <div class="macos-titlebar-premium">
             <div class="macos-dot macos-dot-red"></div>
             <div class="macos-dot macos-dot-yellow"></div>
             <div class="macos-dot macos-dot-green"></div>
-            <span class="ml-4 text-sm text-zinc-500">UniBot Support</span>
-            <div class="ml-auto text-xs text-zinc-600">Powered by your knowledge base</div>
+            <span
+              class="ml-4 text-sm text-[#6b6b7a]"
+              style="font-family: 'Satoshi', sans-serif;">UniBot Support</span
+            >
+            <div class="ml-auto text-xs text-[#6b6b7a]">
+              Powered by your knowledge base
+            </div>
           </div>
 
           <!-- Chat area -->
-          <div class="p-4 space-y-4 min-h-[300px] bg-black">
+          <div class="p-5 space-y-4 min-h-[320px] bg-[#0c0c0f]">
             <!-- Bot message -->
-            <div class="flex gap-3 animate-on-scroll delay-300">
-              <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <div class="flex gap-3 animate-fade-up delay-300">
+              <div
+                class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff6b4a] to-[#ffa94d] flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-[#050507]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
                 </svg>
               </div>
-              <div class="bg-zinc-900 border border-zinc-800 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%]">
-                <p class="text-sm text-zinc-300">
-                  Hi! 👋 I'm your AI assistant trained on your company's data. How can I help you today?
+              <div
+                class="bg-[#111115] border border-[#1f1f28] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%]"
+              >
+                <p class="text-sm text-[#c4c4d0]">
+                  Hi! 👋 I'm your AI assistant trained on your company's data.
+                  How can I help you today?
                 </p>
               </div>
             </div>
 
             <!-- User message -->
-            <div class="flex justify-end animate-on-scroll delay-400">
-              <div class="bg-zinc-800 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%]">
-                <p class="text-sm text-white">What pricing plans do you offer?</p>
+            <div class="flex justify-end animate-fade-up delay-400">
+              <div
+                class="bg-gradient-to-r from-[#9f7aea]/20 to-[#ff6b4a]/20 border border-[#9f7aea]/20 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%]"
+              >
+                <p class="text-sm text-white">
+                  What pricing plans do you offer?
+                </p>
               </div>
             </div>
 
             <!-- Bot response -->
-            <div class="flex gap-3 animate-on-scroll delay-500">
-              <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <div class="flex gap-3 animate-fade-up delay-500">
+              <div
+                class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff6b4a] to-[#ffa94d] flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-[#050507]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
                 </svg>
               </div>
-              <div class="bg-zinc-900 border border-zinc-800 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%]">
-                <p class="text-sm text-zinc-300">
+              <div
+                class="bg-[#111115] border border-[#1f1f28] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[85%]"
+              >
+                <p class="text-sm text-[#c4c4d0] mb-3">
                   We offer plans tailored to your needs:
                 </p>
-                <ul class="text-sm text-zinc-500 mt-2 space-y-1">
-                  <li>🚀 <strong class="text-zinc-300">Starter</strong> - Perfect for small teams</li>
-                  <li>💼 <strong class="text-zinc-300">Pro</strong> - For growing businesses</li>
-                  <li>🏢 <strong class="text-zinc-300">Enterprise</strong> - Custom solutions</li>
+                <ul class="text-sm text-[#8b8b9a] space-y-2">
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#ff6b4a]"></span>
+                    <strong class="text-[#c4c4d0]">Starter</strong> — Perfect for
+                    trying out
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#ffa94d]"></span>
+                    <strong class="text-[#c4c4d0]">Pro</strong> — For growing businesses
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#9f7aea]"></span>
+                    <strong class="text-[#c4c4d0]">Enterprise</strong> — Custom solutions
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
           <!-- Input area -->
-          <div class="p-4 border-t border-zinc-800 bg-zinc-950">
-            <div class="flex items-center gap-3 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3">
-              <span class="flex-1 text-sm text-zinc-600">Type your message...</span>
-              <button class="p-2 bg-green-500 rounded-lg hover:bg-green-400 transition-colors">
-                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          <div class="p-4 border-t border-[#1f1f28] bg-[#0a0a0d]">
+            <div
+              class="flex items-center gap-3 bg-[#111115] border border-[#1f1f28] rounded-xl px-4 py-3.5"
+            >
+              <span class="flex-1 text-sm text-[#6b6b7a]"
+                >Type your message...</span
+              >
+              <button
+                class="p-2.5 bg-gradient-to-r from-[#ff6b4a] to-[#ffa94d] rounded-lg hover:opacity-90 transition-opacity"
+              >
+                <svg
+                  class="w-4 h-4 text-[#050507]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                 </svg>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Floating badge -->
-        <div class="absolute -bottom-4 -left-4 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2 shadow-lg" style="animation: float 2s ease-in-out infinite;">
-          <p class="text-xs text-zinc-500">Response time</p>
-          <p class="font-semibold text-green-400">~1.2 seconds</p>
+        <!-- Floating Response Time Badge -->
+        <div
+          class="absolute -bottom-4 -left-4 lg:-left-8 bg-[#111115] border border-[#1f1f28] rounded-xl px-5 py-3 shadow-2xl"
+          style="animation: float-medium 4s ease-in-out infinite;"
+        >
+          <p
+            class="text-xs text-[#6b6b7a] uppercase tracking-wider font-medium mb-1"
+            style="font-family: 'Syne', sans-serif;"
+          >
+            Response time
+          </p>
+          <p
+            class="text-lg font-bold text-[#ff6b4a]"
+            style="font-family: 'Syne', sans-serif;"
+          >
+            ~1.2 seconds
+          </p>
+        </div>
+
+        <!-- Floating Accuracy Badge -->
+        <div
+          class="absolute -top-4 -right-4 lg:-right-8 bg-[#111115] border border-[#1f1f28] rounded-xl px-5 py-3 shadow-2xl hidden md:block"
+          style="animation: float-medium 5s ease-in-out infinite; animation-delay: -2s;"
+        >
+          <p
+            class="text-xs text-[#6b6b7a] uppercase tracking-wider font-medium mb-1"
+            style="font-family: 'Syne', sans-serif;"
+          >
+            Accuracy
+          </p>
+          <p
+            class="text-lg font-bold text-[#9f7aea]"
+            style="font-family: 'Syne', sans-serif;"
+          >
+            98.5%
+          </p>
         </div>
       </div>
     </div>

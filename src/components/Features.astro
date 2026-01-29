@@ -2,131 +2,247 @@
 const features = [
   {
     title: "Train on Documents",
-    description: "Upload PDFs, DOCs, CSVs, and more. Our AI learns from your existing documentation.",
+    description:
+      "Upload PDFs, DOCs, CSVs, and more. Our AI learns from your existing documentation instantly.",
     icon: "document",
+    color: "coral",
   },
   {
-    title: "Train on APIs & Databases",
-    description: "Connect your REST APIs and databases for real-time, accurate responses.",
+    title: "APIs & Databases",
+    description:
+      "Connect your REST APIs and databases for real-time, accurate responses with live data.",
     icon: "database",
+    color: "violet",
   },
   {
-    title: "Embeddable Chat Widget",
-    description: "A beautiful, customizable chat widget that matches your brand perfectly.",
+    title: "Chat Widget",
+    description:
+      "A beautiful, customizable chat widget that matches your brand perfectly.",
     icon: "chat",
+    color: "cyan",
   },
   {
     title: "Real-time Sync",
-    description: "Your chatbot stays up-to-date as your data changes. No manual retraining needed.",
+    description:
+      "Your chatbot stays up-to-date as your data changes. No manual retraining needed.",
     icon: "sync",
+    color: "amber",
   },
   {
     title: "Secure & Private",
-    description: "Enterprise-grade security with end-to-end encryption. Your data stays yours.",
+    description:
+      "Enterprise-grade security with end-to-end encryption. Your data stays yours.",
     icon: "shield",
+    color: "rose",
   },
   {
     title: "No-code Setup",
-    description: "Get started in minutes without writing a single line of code.",
+    description:
+      "Get started in minutes without writing a single line of code.",
     icon: "lightning",
+    color: "coral",
   },
 ];
 ---
 
-<section id="features" class="section-padding bg-black relative">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section id="features" class="section-cosmic bg-[#0a0a0d] relative">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-coral w-[500px] h-[500px] -bottom-40 -right-40 opacity-20"
+    >
+    </div>
+    <div
+      class="cosmic-orb cosmic-orb-amber w-[300px] h-[300px] top-20 left-10 opacity-15"
+      style="animation-delay: -7s;"
+    >
+    </div>
   </div>
 
-  <div class="container-narrow mx-auto relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="heading-lg mb-4">
-        Everything You Need to <span class="gradient-text">Build Smart Support</span>
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-20 animate-fade-up">
+      <span class="announcement-premium mb-6 inline-flex">
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+          ></path>
+        </svg>
+        Powerful Features
+      </span>
+      <h2 class="heading-section mb-6">
+        Everything You Need to <br class="hidden sm:block" />
+        <span class="gradient-text-luminous">Build Smart Support</span>
       </h2>
-      <p class="body-lg max-w-2xl mx-auto text-zinc-400">
-        Powerful features that make creating and managing your AI chatbot effortless.
+      <p class="body-large max-w-2xl mx-auto text-[#8b8b9a]">
+        Powerful features that make creating and managing your AI chatbot
+        effortless.
       </p>
     </div>
 
+    <!-- Features Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Train on Documents -->
-      <div class="group animate-on-scroll delay-100">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      <!-- Feature 1: Documents -->
+      <div class="animate-fade-up delay-100 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="icon-box mb-6">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[0].title}</h3>
-          <p class="body-md text-zinc-400">{features[0].description}</p>
+          <h3 class="heading-card mb-3">{features[0].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[0].description}</p>
         </div>
       </div>
 
-      <!-- Train on APIs & Databases -->
-      <div class="group animate-on-scroll delay-200">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+      <!-- Feature 2: APIs -->
+      <div class="animate-fade-up delay-200 group">
+        <div class="crystal-card p-8 h-full">
+          <div
+            class="icon-box mb-6"
+            style="background: linear-gradient(135deg, rgba(159, 122, 234, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%); border-color: rgba(159, 122, 234, 0.15);"
+          >
+            <svg
+              class="w-7 h-7"
+              style="color: #9f7aea;"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+              ></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[1].title}</h3>
-          <p class="body-md text-zinc-400">{features[1].description}</p>
+          <h3 class="heading-card mb-3">{features[1].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[1].description}</p>
         </div>
       </div>
 
-      <!-- Embeddable Chat Widget -->
-      <div class="group animate-on-scroll delay-300">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+      <!-- Feature 3: Chat Widget -->
+      <div class="animate-fade-up delay-300 group">
+        <div class="crystal-card p-8 h-full">
+          <div
+            class="icon-box mb-6"
+            style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.1) 0%, rgba(159, 122, 234, 0.1) 100%); border-color: rgba(34, 211, 238, 0.15);"
+          >
+            <svg
+              class="w-7 h-7"
+              style="color: #22d3ee;"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+              ></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[2].title}</h3>
-          <p class="body-md text-zinc-400">{features[2].description}</p>
+          <h3 class="heading-card mb-3">{features[2].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[2].description}</p>
         </div>
       </div>
 
-      <!-- Real-time Sync -->
-      <div class="group animate-on-scroll delay-100">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+      <!-- Feature 4: Real-time Sync -->
+      <div class="animate-fade-up delay-100 group">
+        <div class="crystal-card p-8 h-full">
+          <div
+            class="icon-box mb-6"
+            style="background: linear-gradient(135deg, rgba(255, 169, 77, 0.1) 0%, rgba(255, 107, 74, 0.1) 100%); border-color: rgba(255, 169, 77, 0.15);"
+          >
+            <svg
+              class="w-7 h-7"
+              style="color: #ffa94d;"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[3].title}</h3>
-          <p class="body-md text-zinc-400">{features[3].description}</p>
+          <h3 class="heading-card mb-3">{features[3].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[3].description}</p>
         </div>
       </div>
 
-      <!-- Secure & Private -->
-      <div class="group animate-on-scroll delay-200">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+      <!-- Feature 5: Security -->
+      <div class="animate-fade-up delay-200 group">
+        <div class="crystal-card p-8 h-full">
+          <div
+            class="icon-box mb-6"
+            style="background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(159, 122, 234, 0.1) 100%); border-color: rgba(244, 114, 182, 0.15);"
+          >
+            <svg
+              class="w-7 h-7"
+              style="color: #f472b6;"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[4].title}</h3>
-          <p class="body-md text-zinc-400">{features[4].description}</p>
+          <h3 class="heading-card mb-3">{features[4].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[4].description}</p>
         </div>
       </div>
 
-      <!-- No-code Setup -->
-      <div class="group animate-on-scroll delay-300">
-        <div class="glass-card rounded-xl p-6 h-full">
-          <div class="w-12 h-12 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:border-green-500/50 transition-all duration-300">
-            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+      <!-- Feature 6: No-code -->
+      <div class="animate-fade-up delay-300 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="icon-box mb-6">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h3 class="heading-md mb-2">{features[5].title}</h3>
-          <p class="body-md text-zinc-400">{features[5].description}</p>
+          <h3 class="heading-card mb-3">{features[5].title}</h3>
+          <p class="body-regular text-[#8b8b9a]">{features[5].description}</p>
         </div>
       </div>
     </div>

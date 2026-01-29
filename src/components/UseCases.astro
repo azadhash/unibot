@@ -1,81 +1,185 @@
 ---
+const useCases = [
+  {
+    title: "SaaS Companies",
+    description:
+      "Automate customer onboarding and reduce support tickets with instant, accurate answers about your product.",
+    icon: "building",
+    gradient: "from-[#3b82f6] to-[#22d3ee]",
+  },
+  {
+    title: "Support Teams",
+    description:
+      "Scale your support without scaling headcount. Handle common queries instantly while your team focuses on complex issues.",
+    icon: "support",
+    gradient: "from-[#9f7aea] to-[#f472b6]",
+  },
+  {
+    title: "E-commerce",
+    description:
+      "Help customers find products, answer shipping questions, and provide order status updates 24/7.",
+    icon: "cart",
+    gradient: "from-[#22d3ee] to-[#3b82f6]",
+  },
+  {
+    title: "Internal Knowledge",
+    description:
+      "Create an internal assistant that helps employees find company policies, procedures, and documentation.",
+    icon: "book",
+    gradient: "from-[#ffa94d] to-[#ff6b4a]",
+  },
+];
 ---
 
-<section class="section-padding bg-black relative">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section class="section-cosmic bg-[#0a0a0d] relative">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-amber w-[500px] h-[500px] top-20 -right-60 opacity-15"
+    >
+    </div>
   </div>
 
-  <div class="container-narrow mx-auto relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="heading-lg mb-4">
-        Built for <span class="gradient-text">Every Team</span>
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-20 animate-fade-up">
+      <span class="status-pill mb-6 inline-flex">
+        <span class="status-pill-dot"></span>
+        Use Cases
+      </span>
+      <h2 class="heading-section mb-6">
+        Built for <span class="gradient-text-luminous">Every Team</span>
       </h2>
-      <p class="body-lg max-w-2xl mx-auto text-zinc-400">
+      <p class="body-large max-w-2xl mx-auto text-[#8b8b9a]">
         From startups to enterprises, UniBot adapts to your unique needs.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Use Cases Grid -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       <!-- SaaS Companies -->
-      <div class="group animate-on-scroll delay-100">
-        <div class="glass-card rounded-xl p-8 h-full flex gap-6 items-start">
-          <div class="w-14 h-14 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500/50 transition-all duration-300">
-            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="heading-md mb-2">SaaS Companies</h3>
-            <p class="body-md text-zinc-400">Automate customer onboarding and reduce support tickets with instant, accurate answers about your product.</p>
+      <div class="animate-fade-up delay-100 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="flex gap-6 items-start">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#22d3ee]/20 border border-[#3b82f6]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"
+            >
+              <svg
+                class="w-7 h-7 text-[#3b82f6]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="heading-card mb-3">{useCases[0].title}</h3>
+              <p class="body-regular text-[#8b8b9a]">
+                {useCases[0].description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Support Teams -->
-      <div class="group animate-on-scroll delay-200">
-        <div class="glass-card rounded-xl p-8 h-full flex gap-6 items-start">
-          <div class="w-14 h-14 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0 group-hover:border-purple-500/50 transition-all duration-300">
-            <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="heading-md mb-2">Support Teams</h3>
-            <p class="body-md text-zinc-400">Scale your support without scaling headcount. Handle common queries instantly while your team focuses on complex issues.</p>
+      <div class="animate-fade-up delay-200 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="flex gap-6 items-start">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#9f7aea]/20 to-[#f472b6]/20 border border-[#9f7aea]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"
+            >
+              <svg
+                class="w-7 h-7 text-[#9f7aea]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="heading-card mb-3">{useCases[1].title}</h3>
+              <p class="body-regular text-[#8b8b9a]">
+                {useCases[1].description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- E-commerce -->
-      <div class="group animate-on-scroll delay-300">
-        <div class="glass-card rounded-xl p-8 h-full flex gap-6 items-start">
-          <div class="w-14 h-14 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0 group-hover:border-cyan-500/50 transition-all duration-300">
-            <svg class="w-7 h-7 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="heading-md mb-2">E-commerce</h3>
-            <p class="body-md text-zinc-400">Help customers find products, answer shipping questions, and provide order status updates 24/7.</p>
+      <div class="animate-fade-up delay-300 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="flex gap-6 items-start">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#22d3ee]/20 to-[#3b82f6]/20 border border-[#22d3ee]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"
+            >
+              <svg
+                class="w-7 h-7 text-[#22d3ee]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="heading-card mb-3">{useCases[2].title}</h3>
+              <p class="body-regular text-[#8b8b9a]">
+                {useCases[2].description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Internal Knowledge -->
-      <div class="group animate-on-scroll delay-400">
-        <div class="glass-card rounded-xl p-8 h-full flex gap-6 items-start">
-          <div class="w-14 h-14 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center flex-shrink-0 group-hover:border-orange-500/50 transition-all duration-300">
-            <svg class="w-7 h-7 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="heading-md mb-2">Internal Knowledge</h3>
-            <p class="body-md text-zinc-400">Create an internal assistant that helps employees find company policies, procedures, and documentation.</p>
+      <div class="animate-fade-up delay-400 group">
+        <div class="crystal-card p-8 h-full">
+          <div class="flex gap-6 items-start">
+            <div
+              class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ffa94d]/20 to-[#ff6b4a]/20 border border-[#ffa94d]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform"
+            >
+              <svg
+                class="w-7 h-7 text-[#ffa94d]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="heading-card mb-3">{useCases[3].title}</h3>
+              <p class="body-regular text-[#8b8b9a]">
+                {useCases[3].description}
+              </p>
+            </div>
           </div>
         </div>
       </div>

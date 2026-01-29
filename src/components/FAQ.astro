@@ -2,63 +2,118 @@
 const faqs = [
   {
     question: "How does UniBot keep my data private?",
-    answer: "Your data is encrypted using AES-256 encryption both at rest and in transit. We never use your data to train our base models, and your information is completely isolated from other customers. You retain full ownership and control of your data at all times.",
+    answer:
+      "Your data is encrypted using AES-256 encryption both at rest and in transit. We never use your data to train our base models, and your information is completely isolated from other customers. You retain full ownership and control of your data at all times.",
   },
   {
     question: "How long does it take to set up UniBot?",
-    answer: "Most customers are up and running within 30 minutes. Simply upload your documents or connect your data sources, wait for the AI to process them (usually a few minutes), and embed the chat widget on your website. No coding required.",
+    answer:
+      "Most customers are up and running within 30 minutes. Simply upload your documents or connect your data sources, wait for the AI to process them (usually a few minutes), and embed the chat widget on your website. No coding required.",
   },
   {
     question: "What data sources does UniBot support?",
-    answer: "UniBot supports a wide range of sources including PDF files, Word documents, CSV/Excel files, Notion pages, Confluence, Google Docs, REST APIs, and direct database connections. We're constantly adding new integrations based on customer feedback.",
+    answer:
+      "UniBot supports a wide range of sources including PDF files, Word documents, CSV/Excel files, Notion pages, Confluence, Google Docs, REST APIs, and direct database connections. We're constantly adding new integrations based on customer feedback.",
   },
   {
     question: "How much does UniBot cost?",
-    answer: "We offer flexible pricing based on your usage and needs. Our Starter plan is perfect for small teams, Pro for growing businesses, and Enterprise for large organizations with custom requirements. Book a demo to discuss the best plan for your needs.",
+    answer:
+      "We offer flexible pricing based on your usage and needs. Our Starter plan is perfect for small teams, Pro for growing businesses, and Enterprise for large organizations with custom requirements. Book a demo to discuss the best plan for your needs.",
   },
   {
     question: "Can I customize the chatbot's appearance and behavior?",
-    answer: "Absolutely! You can customize the chat widget's colors, logo, welcome message, and position to match your brand. You can also configure the AI's tone, set up custom responses for specific questions, and define escalation rules for when to involve human agents.",
+    answer:
+      "Absolutely! You can customize the chat widget's colors, logo, welcome message, and position to match your brand. You can also configure the AI's tone, set up custom responses for specific questions, and define escalation rules for when to involve human agents.",
   },
 ];
 ---
 
-<section id="faq" class="section-padding bg-black relative">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section id="faq" class="section-cosmic bg-[#0a0a0d] relative">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-violet w-[400px] h-[400px] top-20 right-0 opacity-15"
+    >
+    </div>
   </div>
 
-  <div class="container-narrow mx-auto relative z-10">
-    <div class="text-center mb-12 animate-on-scroll">
-      <h2 class="heading-lg mb-4">
-        Frequently Asked <span class="gradient-text">Questions</span>
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-14 animate-fade-up">
+      <span class="status-pill mb-6 inline-flex">
+        <span class="status-pill-dot"></span>
+        Got Questions?
+      </span>
+      <h2 class="heading-section mb-6">
+        Frequently Asked <span class="gradient-text-luminous">Questions</span>
       </h2>
-      <p class="body-lg max-w-2xl mx-auto text-zinc-400">
-        Everything you need to know about UniBot. Can't find what you're looking for?{" "}
-        <a href="#book-demo" class="text-green-400 hover:underline">
+      <p class="body-large max-w-2xl mx-auto text-[#8b8b9a]">
+        Everything you need to know about UniBot. Can't find what you're looking
+        for?{" "}
+        <a href="#book-demo" class="text-[#ff6b4a] hover:underline font-medium">
           Book a demo
         </a>{" "}
         and ask us directly.
       </p>
     </div>
 
-    <div class="max-w-3xl mx-auto space-y-4 animate-on-scroll delay-200">
-      {faqs.map((faq, index) => (
-        <details class="glass-card rounded-xl group" name="faq">
-          <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-white hover:text-green-400 transition-colors list-none">
-            <span class="pr-4">{faq.question}</span>
-            <svg class="w-5 h-5 flex-shrink-0 text-zinc-500 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </summary>
-          <div class="px-5 pb-5 text-zinc-400">
-            {faq.answer}
-          </div>
-        </details>
-      ))}
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl mx-auto space-y-4 animate-fade-up delay-200">
+      {
+        faqs.map((faq, index) => (
+          <details class="crystal-card rounded-xl group" name="faq">
+            <summary
+              class="flex items-center justify-between cursor-pointer p-6 font-semibold text-white hover:text-[#ff6b4a] transition-colors list-none"
+              style="font-family: 'Syne', sans-serif;"
+            >
+              <span class="pr-6 text-left">{faq.question}</span>
+              <div class="w-8 h-8 rounded-lg bg-[#111115] border border-[#1f1f28] flex items-center justify-center flex-shrink-0 group-hover:border-[#ff6b4a]/30 transition-colors">
+                <svg
+                  class="w-4 h-4 text-[#8b8b9a] group-open:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-6 pb-6 text-[#8b8b9a] leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16 animate-fade-up delay-400">
+      <p class="text-[#6b6b7a] mb-6">Still have questions?</p>
+      <a href="#book-demo" class="btn-luminous group inline-flex">
+        <span class="flex items-center gap-2">
+          Talk to Us
+          <svg
+            class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>

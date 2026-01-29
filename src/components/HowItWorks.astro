@@ -1,71 +1,176 @@
 ---
+const steps = [
+  {
+    number: "01",
+    title: "Upload Your Data",
+    description:
+      "Connect your documents, PDFs, APIs, Notion pages, or knowledge base. We support all major formats.",
+    icon: "upload",
+  },
+  {
+    number: "02",
+    title: "We Train Your AI",
+    description:
+      "Our AI learns from your data and understands your business context, products, and services.",
+    icon: "brain",
+  },
+  {
+    number: "03",
+    title: "Embed & Go Live",
+    description:
+      "Copy-paste a simple embed code into your website. Your AI chatbot is ready to help customers.",
+    icon: "code",
+  },
+];
 ---
 
-<section id="how-it-works" class="section-padding bg-zinc-950 relative">
-  <!-- Blueprint grid -->
-  <div class="absolute inset-0 pointer-events-none opacity-30">
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/4"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-1/2"></div>
-    <div class="h-full w-px border-l border-dashed border-zinc-700 absolute left-3/4"></div>
+<section id="how-it-works" class="section-cosmic bg-[#050507] relative">
+  <!-- Background Orbs -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="cosmic-orb cosmic-orb-violet w-[400px] h-[400px] top-0 right-1/4 opacity-20"
+    >
+    </div>
   </div>
 
-  <div class="container-narrow mx-auto relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="heading-lg mb-4">
-        How It <span class="gradient-text">Works</span>
+  <!-- Grid Pattern -->
+  <div class="grid-pattern opacity-30"></div>
+
+  <div class="container-premium relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-20 animate-fade-up">
+      <span class="status-pill mb-6 inline-flex">
+        <span class="w-2 h-2 rounded-full bg-[#ff6b4a]"></span>
+        Simple Setup
+      </span>
+      <h2 class="heading-section mb-6">
+        How It <span class="gradient-text-luminous">Works</span>
       </h2>
-      <p class="body-lg max-w-2xl mx-auto text-zinc-400">
-        Get your AI chatbot up and running in three simple steps. No coding required.
+      <p class="body-large max-w-2xl mx-auto text-[#8b8b9a]">
+        Get your AI chatbot up and running in three simple steps. No coding
+        required.
       </p>
     </div>
 
-    <div class="relative">
-      <!-- Connection line -->
-      <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent -translate-y-1/2 z-0"></div>
+    <!-- Steps Container -->
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Connection Line (Desktop) -->
+      <div
+        class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ff6b4a]/30 to-transparent -translate-y-1/2 z-0"
+      >
+      </div>
 
       <div class="grid md:grid-cols-3 gap-8 relative z-10">
-        <!-- Step 1: Upload Your Data -->
-        <div class="relative animate-on-scroll delay-100">
-          <div class="glass-card rounded-xl p-8 text-center h-full">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-sm font-bold text-black">1</div>
-            <div class="w-16 h-16 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+        <!-- Step 1 -->
+        <div class="animate-fade-up delay-100">
+          <div class="crystal-card p-8 h-full text-center group">
+            <!-- Number Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <div class="number-badge">01</div>
+            </div>
+
+            <!-- Icon -->
+            <div class="icon-box mx-auto mb-6 mt-2">
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                ></path>
               </svg>
             </div>
-            <h3 class="heading-md mb-3">Upload Your Data</h3>
-            <p class="body-md text-zinc-400">Connect your documents, PDFs, APIs, Notion pages, or knowledge base. We support all major formats.</p>
+
+            <h3 class="heading-card mb-4">{steps[0].title}</h3>
+            <p class="body-regular text-[#8b8b9a]">{steps[0].description}</p>
           </div>
         </div>
 
-        <!-- Step 2: We Train Your AI -->
-        <div class="relative animate-on-scroll delay-200">
-          <div class="glass-card rounded-xl p-8 text-center h-full">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-sm font-bold text-black">2</div>
-            <div class="w-16 h-16 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+        <!-- Step 2 -->
+        <div class="animate-fade-up delay-200">
+          <div class="crystal-card p-8 h-full text-center group">
+            <!-- Number Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <div class="number-badge">02</div>
+            </div>
+
+            <!-- Icon -->
+            <div class="icon-box mx-auto mb-6 mt-2">
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
               </svg>
             </div>
-            <h3 class="heading-md mb-3">We Train Your AI</h3>
-            <p class="body-md text-zinc-400">Our AI learns from your data and understands your business context, products, and services.</p>
+
+            <h3 class="heading-card mb-4">{steps[1].title}</h3>
+            <p class="body-regular text-[#8b8b9a]">{steps[1].description}</p>
           </div>
         </div>
 
-        <!-- Step 3: Embed & Go Live -->
-        <div class="relative animate-on-scroll delay-300">
-          <div class="glass-card rounded-xl p-8 text-center h-full">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-sm font-bold text-black">3</div>
-            <div class="w-16 h-16 rounded-xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        <!-- Step 3 -->
+        <div class="animate-fade-up delay-300">
+          <div class="crystal-card p-8 h-full text-center group">
+            <!-- Number Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <div class="number-badge">03</div>
+            </div>
+
+            <!-- Icon -->
+            <div class="icon-box mx-auto mb-6 mt-2">
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
               </svg>
             </div>
-            <h3 class="heading-md mb-3">Embed & Go Live</h3>
-            <p class="body-md text-zinc-400">Copy-paste a simple embed code into your website. Your AI chatbot is ready to help customers.</p>
+
+            <h3 class="heading-card mb-4">{steps[2].title}</h3>
+            <p class="body-regular text-[#8b8b9a]">{steps[2].description}</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16 animate-fade-up delay-400">
+      <a href="#book-demo" class="btn-ghost group inline-flex">
+        <span class="flex items-center gap-2">
+          Start Building
+          <svg
+            class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>
